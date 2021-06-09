@@ -1,5 +1,5 @@
 # src-notices-actions
-SRC每日公告爬取，并通过github actions自动运行
+SRC每日公告爬取，并通过github actions自动运行输出结果，可自行添加Server酱以通过VX通知
 > lin9e@qq.com
 
 # Usage
@@ -14,9 +14,13 @@ on:
 ```
 - 运行过程可通过src-notices-actions项目对应Actions处查看，调试
 - 每日运行结果以txt文件形式存储于output目录
+- 如需添加Sever酱通知，请以私人项目形式存储，防止token泄露被人恶意发通知…
 
 # 版本
 ### v0.1
 - 基于Bywalks的OnTimeHacker, 在此基础上添加github actions自动运行脚本并提醒
 - 暂时删除无法访问的src:guazi
 - 更新字节SRC网站
+
+# Thanks
+- https://github.com/Bywalks/OnTimeHacker
