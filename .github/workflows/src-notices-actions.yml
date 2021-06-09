@@ -4,10 +4,9 @@
 name: Python application
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  schedule:
+    - cron: '30 9 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -28,14 +27,18 @@ jobs:
 
     - name: Running get_src_notices
       run: |
-        python get_src_notices.py > result.txt
+        python get_src_notices.py > output/`src_notices +%Y%m%d`.txt
+
+    - name: Create local changes
+      run: |
+        git add output/`src_notices +%Y%m%d`.txt
 
     - name: commit
       run: |
         git config --global user.email root@ohlinge.cn
         git config --global user.name 1in9e
-        git add .
-        git commit -m "update" -a
+        git commit -m "update" -a --allow-empty
+
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
