@@ -27,11 +27,11 @@ jobs:
 
     - name: Running get_src_notices
       run: |
-        python get_src_notices.py > output/`src_notices +%Y%m%d`.txt
+        python get_src_notices.py > output/`date +%Y%m%d`.txt
 
     - name: Create local changes
       run: |
-        git add output/`src_notices +%Y%m%d`.txt
+        git add output/`date +%Y%m%d`.txt
 
     - name: commit
       run: |
