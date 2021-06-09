@@ -338,9 +338,9 @@ if __name__ == '__main__':
     global key
     key = ''  # 填写上你 Server酱的 key，key 申请地址：http://sc.ftqq.com/
     number = 3
-    if key == '':
-        print('请在代码中填写上你 Server酱的 key，key 申请地址：http://sc.ftqq.com/')
-        sys.exit()
+#     if key == '':
+#         print('请在代码中填写上你 Server酱的 key，key 申请地址：http://sc.ftqq.com/')
+#         sys.exit()
     current_time = time.strftime("%Y-%m-%d", time.localtime())
     src_360()
     iqiyi()
