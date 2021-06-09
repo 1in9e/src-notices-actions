@@ -41,7 +41,6 @@ def Send_VX(src_name, src_title):
     print(notice)
     requests.get('https://sc.ftqq.com/%s.send?text=%s&desp=%s' % (key,src_name,src_title))
 
-
 def src_360():
     print("[+]开始监测360 SRC..")
     url = 'https://security.360.cn/News/news?type=-1'
@@ -322,7 +321,7 @@ def zto():
 
 def bytedance():
     print("[+]开始监测字节 SRC..")
-    url = 'https://security.bytedance.com/notice/getNotices/'
+    url = 'https://src.bytedance.com/notice/getNotices/'
     r = requests.get(url, headers=headers,timeout=5,verify=False)
     bs = BeautifulSoup(r.text, 'lxml')
     notice_list = bs.select('.container')[0].select('li')
@@ -354,7 +353,7 @@ if __name__ == '__main__':
     didi()
     douyu()
     ele()
-    guazi()
+    # guazi()
     hehe()
     xiangdao()
     jd()
